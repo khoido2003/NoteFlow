@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="./public/logo-dark.svg" alt="Auth logo" width="100" height="100">
+</p>
+
+# Note Flow
 
 ## Getting Started
 
