@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Note Flow",
+  title: "NoteFlow",
   description: "The connected workspace where better, faster work happens.",
   icons: {
     icon: [
@@ -30,7 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          storageKey="note-flow-theme"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
