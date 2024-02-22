@@ -20,18 +20,20 @@ import {
 import { UserItem } from "./user-item";
 import { api } from "@/convex/_generated/api";
 import { Item } from "./item";
+import { Trashbox } from "./trash-box";
+import { DocumentList } from "./document-list";
 import { toast } from "sonner";
 
 import { ElementRef, useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
-import { DocumentList } from "./document-list";
-import { Trashbox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
   const search = useSearch();
+  const settings = useSettings();
   const create = useMutation(api.documents.create);
 
   const pathname = usePathname();
@@ -170,7 +172,7 @@ export const Navigation = () => {
           />
 
           {/* Open setting */}
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
 
           {/* Create new page */}
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
