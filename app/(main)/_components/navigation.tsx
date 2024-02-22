@@ -28,8 +28,10 @@ import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 import { DocumentList } from "./document-list";
 import { Trashbox } from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 
 export const Navigation = () => {
+  const search = useSearch();
   const create = useMutation(api.documents.create);
 
   const pathname = usePathname();
@@ -160,7 +162,12 @@ export const Navigation = () => {
           <UserItem />
 
           {/* Add a search bar */}
-          <Item label="Search" icon={SearchIcon} isSearch onClick={() => {}} />
+          <Item
+            label="Search"
+            icon={SearchIcon}
+            isSearch
+            onClick={search.onOpen}
+          />
 
           {/* Open setting */}
           <Item label="Settings" icon={Settings} onClick={() => {}} />
