@@ -8,6 +8,7 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 
 import { Toaster } from "sonner";
 import { SearchCommand } from "@/components/search-command";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,19 +40,23 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            storageKey="note-flow-theme"
-          >
-            <SearchCommand />
-            {children}
-            <Toaster position="bottom-center" />
-            <ModalProvider />
-          </ThemeProvider>
+          <EdgeStoreProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              storageKey="note-flow-theme"
+            >
+              <SearchCommand />
+              {children}
+              <Toaster position="bottom-center" />
+              <ModalProvider />
+            </ThemeProvider>
+          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>
   );
 }
+
+// 6:26
