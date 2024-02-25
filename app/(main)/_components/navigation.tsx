@@ -25,7 +25,7 @@ import { DocumentList } from "./document-list";
 import { toast } from "sonner";
 
 import { ElementRef, useCallback, useEffect, useRef, useState } from "react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useMutation } from "convex/react";
 import { useSearch } from "@/hooks/use-search";
@@ -33,6 +33,7 @@ import { useSettings } from "@/hooks/use-settings";
 import { Navbar } from "./navbar";
 
 export const Navigation = () => {
+  const router = useRouter();
   const search = useSearch();
   const settings = useSettings();
   const create = useMutation(api.documents.create);
@@ -104,7 +105,9 @@ export const Navigation = () => {
   }, [isMobile]);
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" });
+    const promise = create({ title: "Untitled" }).then((documentId) =>
+      router.push(`/documents/${documentId}`)
+    );
 
     toast.promise(promise, {
       loading: "Creating...",

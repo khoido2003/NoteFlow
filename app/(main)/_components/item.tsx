@@ -59,7 +59,7 @@ export const Item = ({
   const onArchive = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
     if (!id) return;
-    const promisse = archive({ id });
+    const promisse = archive({ id }).then(() => router.push("/documents"));
     toast.promise(promisse, {
       loading: "Archiving...",
       success: "Document archived!",
@@ -85,7 +85,7 @@ export const Item = ({
       if (!expanded) {
         onExpand?.();
       }
-      // router.push(`/documents/${documentId}`);
+      router.push(`/documents/${documentId}`);
     });
 
     toast.promise(promise, {
