@@ -7,7 +7,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 
 import { Toaster } from "sonner";
-import { SearchCommand } from "@/components/search-command";
+
 import { EdgeStoreProvider } from "@/lib/edgestore";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -47,7 +47,6 @@ export default function RootLayout({
               enableSystem
               storageKey="note-flow-theme"
             >
-              <SearchCommand />
               {children}
               <Toaster position="bottom-center" />
               <ModalProvider />
