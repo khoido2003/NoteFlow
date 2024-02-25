@@ -31,11 +31,11 @@ _Find document_
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Convex](https://convex.netlify.app/)
-- [Clerk](https://clerk.dev/)
-- [Blocknote](https://blocknote.app/)
-- [Zudstand](https://zudstand.com/)
-- [Edgestore](https://edgestore.io/)
+- [Convex](https://www.convex.dev/)
+- [Clerk](https://clerk.com/docs)
+- [Blocknote](https://www.blocknotejs.org/)
+- [Zudstand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [Edgestore](https://edgestore.dev/)
 
 ## Getting Started
 
