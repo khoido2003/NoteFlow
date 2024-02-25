@@ -4,9 +4,73 @@
 
 # Note Flow
 
+NoteFlow is a powerful productivity and collaboration platform designed to elevate the way you organize, collaborate, and innovate. With a user-friendly interface and robust features, NoteFlow empowers individuals and teams to effortlessly capture, refine, and share their thoughts, notes, and tasks.
+
+## Features
+
+- **Note Management:** Create, edit, and organize your notes effortlessly.
+- **Task Tracking:** Keep track of your tasks with customizable lists and boards.
+- **Document Handling:** Store and manage documents securely.
+- **Collaboration:** Share notes and documents with others.
+- **Authentication:** Secure user authentication powered by Clerk.
+- **Customization:** Tailwind CSS enables easy customization of the user interface.
+
+## Screenshots
+
+![Screenshot 1](screenshots/p-1.png)
+_Homepage._
+
+![Screenshot 2](screenshots/p-2.png)
+_Edit your document_
+
+![Screenshot 3](screenshots/p-3.png)
+_Find document_
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Convex](https://convex.netlify.app/)
+- [Clerk](https://clerk.dev/)
+- [Blocknote](https://blocknote.app/)
+- [Zudstand](https://zudstand.com/)
+- [Edgestore](https://edgestore.io/)
+
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/khoido2003/NoteFlow.git
+   cd NoteFlow
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up your environment variables:**
+
+Create a `.env.local` file in the root directory and add the following:
+
+```env
+CONVEX_DEPLOYMENT=''
+NEXT_PUBLIC_CONVEX_URL=''
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=''
+EDGE_STORE_ACCESS_KEY=''
+EDGE_STORE_SECRET_KEY=''
+```
+
+4. **Run Convex database migrations:**
+
+   ```bash
+   npx convex dev
+   ```
+
+5. **Start the development server:**
 
 ```bash
 npm run dev
